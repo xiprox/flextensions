@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 extension DateTimeExts on DateTime {
   DateTime get previousDay => subtract(const Duration(days: 1));
   DateTime get nextDay => add(const Duration(days: 1));
@@ -98,4 +100,6 @@ extension DateTimeExts on DateTime {
   bool isSaturday() => weekday == DateTime.saturday;
   bool isSunday() => weekday == DateTime.sunday;
   bool isWeekend() => isSaturday() || isSunday();
+
+  String format(DateFormat formatter) => formatter.format(this);
 }
