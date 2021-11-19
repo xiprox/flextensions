@@ -1,10 +1,6 @@
 # FLextensions
 
-Extension methods for Flutter and Dart.
+Some extension methods for Flutter and Dart.
 
-```yaml
-dependencies:
-  # ...
-  flextensions:
-    git: https://github.com/xiprox/flextensions
-```
+## Install
+See the [install page](https://pub.dev/packages/flextensions/install).
