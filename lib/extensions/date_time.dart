@@ -5,6 +5,13 @@ extension DateTimeExts on DateTime {
   DateTime get nextDay => add(const Duration(days: 1));
   DateTime get nextYear => add(const Duration(days: 365));
 
+  DateTime get previousMonday {
+    if (isMonday()) return add(const Duration(days: -7));
+    return add(-Duration(days: weekday - 1));
+  }
+
+  DateTime get nextMonday => add(Duration(days: 7 - weekday + 1));
+
   bool isToday() => isSameDay(DateTime.now());
 
   bool isTomorrow() => isSameDay(DateTime.now().nextDay);
