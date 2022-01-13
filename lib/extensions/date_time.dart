@@ -74,7 +74,8 @@ extension DateTimeExts on DateTime {
   DateTime get startOfWeek => DateTime(year, month, day - weekday + 1);
 
   /// Returns the Sunday of this week.
-  DateTime get endOfWeek => DateTime(year, month, day + 7 - weekday);
+  DateTime get endOfWeek => DateTime(year, month, day + 7 - weekday + 1)
+      .add(const Duration(microseconds: -1));
 
   DateTime get beginningOfThisMonth => DateTime(year, month, 1);
 
@@ -103,7 +104,9 @@ extension DateTimeExts on DateTime {
   }
 
   /// Returns this DateTime without hour, minute, second, etc. information.
-  DateTime startOfDay() => DateTime(year, month, day);
+  DateTime get startOfDay => DateTime(year, month, day);
+  DateTime get endOfDay =>
+      DateTime(year, month, day + 1).add(const Duration(microseconds: -1));
 
   bool isMonday() => weekday == DateTime.monday;
   bool isTuesday() => weekday == DateTime.tuesday;
