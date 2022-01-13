@@ -70,6 +70,12 @@ extension DateTimeExts on DateTime {
   DateTime get end =>
       DateTime(year, month, day + 1).subtract(const Duration(microseconds: 1));
 
+  /// Returns the Monday of this week.
+  DateTime get beginningOfWeek => add(-Duration(days: weekday - 1));
+
+  /// Returns the Sunday of this week.
+  DateTime get endOfWeek => add(Duration(days: 7 - weekday));
+
   DateTime get beginningOfThisMonth => DateTime(year, month, 1);
 
   DateTime get beginningOfNextMonth {
