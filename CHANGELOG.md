@@ -1,4 +1,9 @@
-## 0.0.3
+## 0.0.4
+
+- Rename `beginningOfWeek` to `startOfWeek`.
+- Discard time information in `startOfWeek` and `endOfWeek`.
+  
+- ## 0.0.3
 
 - Added `beginningOfWeek` and `endOfWeek` to `DateTime`.
 ## 0.0.2

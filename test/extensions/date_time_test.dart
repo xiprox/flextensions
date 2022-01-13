@@ -18,12 +18,12 @@ void main() async {
     expect(DateTime(2022, 1, 23).nextMonday, DateTime(2022, 1, 24));
   });
 
-  test('beginningOfWeek returns correct values', () async {
-    expect(DateTime(2022, 1, 12).beginningOfWeek, DateTime(2022, 1, 10));
-    expect(DateTime(2022, 1, 10).beginningOfWeek, DateTime(2022, 1, 10));
-    expect(DateTime(2022, 1, 17).beginningOfWeek, DateTime(2022, 1, 17));
-    expect(DateTime(2022, 1, 18).beginningOfWeek, DateTime(2022, 1, 17));
-    expect(DateTime(2022, 1, 23).beginningOfWeek, DateTime(2022, 1, 17));
+  test('startOfWeek returns correct values', () async {
+    expect(DateTime(2022, 1, 12).startOfWeek, DateTime(2022, 1, 10));
+    expect(DateTime(2022, 1, 10).startOfWeek, DateTime(2022, 1, 10));
+    expect(DateTime(2022, 1, 17).startOfWeek, DateTime(2022, 1, 17));
+    expect(DateTime(2022, 1, 18).startOfWeek, DateTime(2022, 1, 17));
+    expect(DateTime(2022, 1, 23).startOfWeek, DateTime(2022, 1, 17));
   });
 
   test('endOfWeek returns correct values', () async {
