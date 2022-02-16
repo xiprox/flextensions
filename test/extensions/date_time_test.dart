@@ -2,6 +2,22 @@ import 'package:flextensions/extensions/date_time.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() async {
+  test('isSameWeek returns correct values', () async {
+    final now = DateTime(2022, 2, 16);
+    expect(DateTime(2022, 1, 17).isSameWeek(now), false);
+    expect(DateTime(2022, 2, 13).isSameWeek(now), false);
+    expect(DateTime(2022, 2, 14).isSameWeek(now), true);
+    expect(DateTime(2022, 2, 15).isSameWeek(now), true);
+    expect(DateTime(2022, 2, 16).isSameWeek(now), true);
+    expect(DateTime(2022, 2, 17).isSameWeek(now), true);
+    expect(DateTime(2022, 2, 18).isSameWeek(now), true);
+    expect(DateTime(2022, 2, 19).isSameWeek(now), true);
+    expect(DateTime(2022, 2, 20).isSameWeek(now), true);
+    expect(DateTime(2022, 2, 21).isSameWeek(now), false);
+    expect(DateTime(2022, 2, 28).isSameWeek(now), false);
+    expect(DateTime(2022, 3, 16).isSameWeek(now), false);
+  });
+
   test('previousMonday returns correct values', () async {
     expect(DateTime(2022, 1, 12).previousMonday, DateTime(2022, 1, 10));
     expect(DateTime(2022, 1, 10).previousMonday, DateTime(2022, 1, 3));

@@ -34,6 +34,10 @@ extension DateTimeExts on DateTime {
     return isSameMonth(other) && day == other.day;
   }
 
+  bool isSameWeek(DateTime other) {
+    return other.isAfter(startOfWeek) && other.isBefore(endOfWeek);
+  }
+
   bool isSameMonth(DateTime other) {
     return year == other.year && month == other.month;
   }
