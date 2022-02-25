@@ -2,8 +2,29 @@ import 'package:flextensions/extensions/date_time.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() async {
+  test('isOnOrBefore returns correct values', () async {
+    final now = DateTime(2022, 2, 21);
+    expect(now.isOnOrBefore(now), true);
+    expect(now.isOnOrBefore(DateTime(2022, 2, 22)), true);
+    expect(now.isOnOrBefore(DateTime(2022, 2, 20)), false);
+    expect(now.isOnOrBefore(DateTime(2022, 2, 20, 23, 59, 59)), false);
+    expect(now.isOnOrBefore(DateTime(2022, 2, 21, 00, 00, 01)), true);
+  });
+
+  test('isOnOrAfter returns correct values', () async {
+    final now = DateTime(2022, 2, 21);
+    expect(now.isOnOrAfter(now), true);
+    expect(now.isOnOrAfter(DateTime(2022, 2, 22)), false);
+    expect(now.isOnOrAfter(DateTime(2022, 2, 20)), true);
+    expect(now.isOnOrAfter(DateTime(2022, 2, 20, 23, 59, 59)), true);
+    expect(now.isOnOrAfter(DateTime(2022, 2, 21, 00, 00, 01)), false);
+  });
+
   test('isSameWeek returns correct values', () async {
     final now = DateTime(2022, 2, 16);
+    expect(now.isSameWeek(now), true);
+    expect(now.isSameWeek(now.startOfWeek), true);
+    expect(now.isSameWeek(now.endOfWeek), true);
     expect(DateTime(2022, 1, 17).isSameWeek(now), false);
     expect(DateTime(2022, 2, 13).isSameWeek(now), false);
     expect(DateTime(2022, 2, 14).isSameWeek(now), true);

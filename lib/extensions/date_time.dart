@@ -12,6 +12,14 @@ extension DateTimeExts on DateTime {
 
   DateTime get nextMonday => add(Duration(days: 7 - weekday + 1));
 
+  bool isOnOrBefore(DateTime other) {
+    return millisecondsSinceEpoch <= other.millisecondsSinceEpoch;
+  }
+
+  bool isOnOrAfter(DateTime other) {
+    return millisecondsSinceEpoch >= other.millisecondsSinceEpoch;
+  }
+
   bool isToday() => isSameDay(DateTime.now());
 
   bool isTomorrow() => isSameDay(DateTime.now().nextDay);
@@ -35,7 +43,7 @@ extension DateTimeExts on DateTime {
   }
 
   bool isSameWeek(DateTime other) {
-    return other.isAfter(startOfWeek) && other.isBefore(endOfWeek);
+    return other.isOnOrAfter(startOfWeek) && other.isOnOrBefore(endOfWeek);
   }
 
   bool isSameMonth(DateTime other) {
