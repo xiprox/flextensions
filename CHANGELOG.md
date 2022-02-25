@@ -1,3 +1,8 @@
+## 0.0.7
+
+- Added `DateTime.isOnOrBefore` and `DateTime.isOnOrAfter`
+- Fixed `DateTime.isSameWeek`
+
 ## 0.0.6
 
 - Added `DateTime.isSameWeek`
