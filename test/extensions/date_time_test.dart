@@ -44,7 +44,12 @@ void main() async {
     expect(DateTime(2022, 1, 10).previousMonday, DateTime(2022, 1, 3));
     expect(DateTime(2022, 1, 17).previousMonday, DateTime(2022, 1, 10));
     expect(DateTime(2022, 1, 18).previousMonday, DateTime(2022, 1, 17));
+    expect(DateTime(2022, 1, 19).previousMonday, DateTime(2022, 1, 17));
+    expect(DateTime(2022, 1, 20).previousMonday, DateTime(2022, 1, 17));
+    expect(DateTime(2022, 1, 21).previousMonday, DateTime(2022, 1, 17));
+    expect(DateTime(2022, 1, 22).previousMonday, DateTime(2022, 1, 17));
     expect(DateTime(2022, 1, 23).previousMonday, DateTime(2022, 1, 17));
+    expect(DateTime(2022, 3, 28).previousMonday, DateTime(2022, 3, 21));
   });
 
   test('nextMonday returns correct values', () async {

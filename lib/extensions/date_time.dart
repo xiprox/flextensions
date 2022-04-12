@@ -6,11 +6,12 @@ extension DateTimeExts on DateTime {
   DateTime get nextYear => add(const Duration(days: 365));
 
   DateTime get previousMonday {
-    if (isMonday()) return add(const Duration(days: -7));
-    return add(-Duration(days: weekday - 1));
+    return DateTime(year, month, day - (isMonday() ? 7 : weekday - 1));
   }
 
-  DateTime get nextMonday => add(Duration(days: 7 - weekday + 1));
+  DateTime get nextMonday {
+    return DateTime(year, month, day + 7 - weekday + 1);
+  }
 
   bool isOnOrBefore(DateTime other) {
     return millisecondsSinceEpoch <= other.millisecondsSinceEpoch;
