@@ -1,3 +1,7 @@
+## 0.0.8
+
+- Fixed `DateTime.previousMonday` and `DateTime.nextMonday` not handling DST.
+  
 ## 0.0.7
 
 - Added `DateTime.isOnOrBefore` and `DateTime.isOnOrAfter`
