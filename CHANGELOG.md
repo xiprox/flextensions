@@ -1,3 +1,7 @@
+## 0.1.0
+
+- Added `DateTime.copyWith`
+  
 ## 0.0.8
 
 - Fixed `DateTime.previousMonday` and `DateTime.nextMonday` not handling DST.
