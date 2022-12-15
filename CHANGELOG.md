@@ -1,3 +1,7 @@
+## 0.2.0
+
+- Added `bool.toInt()`
+
 ## 0.1.0
 
 - Added `DateTime.copyWith`
