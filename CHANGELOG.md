@@ -1,3 +1,7 @@
+## 0.2.1
+
+- Fixed arithmetic exts on int
+
 ## 0.2.0
 
 - Added `bool.toInt()`
